@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Affordable and professional web design">
+	  <meta name="keywords" content="web design, affordable web design, professional web design">
+  	<meta name="author" content="Brad Traversy">
+    <title>Event Booking System</title>
+    <link rel="stylesheet" href="./static/css/style.css">
+    <style>
+    #showcase{
+      min-height:250px;
+      background:url('/static/showcase.jpg') no-repeat 0 -400px;
+      text-align:center;
+      color:#ffffff;
+    }
+    #showcase h1{
+      margin-top: 25px;
+      margin-bottom: 10px;
+      font-size:55px;
+      margin-bottom:10px;
+    }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div id="branding">
+          <h1><span class="highlight">Event</span> Booking System</h1>
+        </div>
+        <nav>
+          <ul>
+            <li class="current"><a href="/">Home</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section id="showcase">
+      <div class="container">
+        <h1>Event Booking System</h1>
+        <p>Hosting events made easy.</p>
+      </div>
+    </section>
+
+
+    <section id="boxes">
+      <div class="container">
+        <div class="box">
+          <img src="/static/building.png">
+          <h3>Room booking</h3>
+          <p>Directly book rooms from this portal and aoid the hassle to walk around everywhere.</p>
+        </div>
+        <div class="box">
+          <img src="/static/night.jpeg">
+          <h3>Night perm</h3>
+          <p>Get Night perms for your organizers directly from the student council office</p>
+        </div>
+        <div class="box">
+          <img src="/static/special.png">
+          <h3>Other Special requests</h3>
+          <p>Any other requests, this is your place to be.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Prabhav Varambally, Copyright &copy; 2019</p>
+    </footer>
+  </body>
+</html>
