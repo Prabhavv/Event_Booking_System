@@ -20,13 +20,25 @@ def land():
 	if request.method == "POST":
 	  email =request.form["email"]
 	  passw = request.form["password"]
-	  flash('Wazza matey')
-	  return render_template('index.html')
+	  if not email:
+	  	flash('Invalid user credentials')
+	  	return render_template('login.html')
+	  else:
+	 	flash(email)
+	  	return render_template('user_home.html')
 
 @app.route('/register',methods=['GET','POST'])
 def register():
 	return render_template('register.html')
 
+@app.route('/user_home',methods=['GET','POST'])
+def user_home():
+	flash(' Leaders of tomorrow ')
+	return render_template('user_home.html')
+
+@app.route('/building',methods=['GET','POST'])
+def building():
+	return render_template('building.html')
 
 
 

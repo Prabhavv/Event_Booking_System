@@ -2,21 +2,24 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+  	<meta name="author" content="Prabhav Varambally">
 		<title>Event Booking System</title>
-		<link rel="stylesheet" href="C:\New folder\templates\style.css">
+		<link rel="stylesheet" href="./static/css/style.css">
 		<style type="text/css">
 		body
 {
 	margin: 0;
 	padding: 0;
-	background: url("/static/bg.png");
+	background: url("/static/bg.jpg");
+	/* background: #35424a; */
 	background-size: cover;
 	font-family: sans-serif;
 }
 .loginBox
 {
 	position: absolute;
-	top: 50%;
+	top: 55%;
 	left: 50%;
 	transform: translate(-50%,-50%);
 	width: 350px;
@@ -48,6 +51,7 @@ h2
 	padding: 0;
 	font-weight: bold;
 	color: #fff;
+	margin-top: 10px;
 }
 .loginBox input
 {
@@ -76,13 +80,13 @@ h2
 	height: 40px;
 	color: #fff;
 	font-size: 16px;
-	background: #ff267e;
+	background: #F45B69;
 	cursor: pointer;
 	border-radius: 20px;
 }
 .loginBox input[type="submit"]:hover
 {
-	background: #efed40;
+	background: #E4FDE1;
 	color: #262626;
 }
 .loginBox a
@@ -92,16 +96,47 @@ h2
 	font-weight: bold;
 	text-decoration: none;
 }
+header{
+  background:#35424a;
+  color:#ffffff;
+  padding-top:30px;
+  min-height:70px;
+  border-bottom:#e8491d 3px solid;
+}
+.message{
+  background:#FE938C;
+  color:#ffffff;
+
+  min-height:10px;
+  border-radius: 30px;
+	align-items: flex-start;
+	text-align: center;
+}
 		</style>
+
 	</head>
 	<body>
+		<header>
+      <div class="container">
+        <div id="branding">
+          <h1><span class="highlight">Event</span> Booking System</h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li  class="current"><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 		<div class="loginBox">
 			<img src="/static/user.png" class="user">
 			<h2>Log In Here</h2>
 			{% with messages = get_flashed_messages()%}
 				{%if messages%}
 					{% for message in messages%}
-					<div class="bg-danger text-white">
+					<div class="message">
 					{{message}}
 					</div>
 					{% endfor %}
@@ -113,8 +148,6 @@ h2
 				<p>Password</p>
 				<input type="password" name="password" placeholder="••••••">
 				<input type="submit" name="" value="Sign In">
-				<a href="#">Forget Password</a><br>
-				<a href="{{ url_for('register') }}">Register</a>
 			</form>
 		</div>
 	</body>
