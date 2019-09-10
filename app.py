@@ -40,6 +40,17 @@ def user_home():
 def building():
 	return render_template('building.html')
 
+@app.route('/status',methods=['GET','POST'])
+def status():
+	return render_template('status.html')
+
+@app.route('/requestt',methods=['GET','POST'])
+def requestt():
+	return render_template('request.html')
+
+@app.route('/perm',methods=['GET','POST'])
+def perm():
+	return render_template('perm.html')
 
 
 if __name__ == '__main__':

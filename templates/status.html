@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+  	<meta name="author" content="Prabhav Varambally">
+    <title>Event Booking System</title>
+    <link rel="stylesheet" href="./static/css/style.css">
+    <style>
+
+
+body {
+	font-family: sans-serif;
+	background-color: #252827;
+	color: white;
+}
+
+p {
+	font-size: 14px;
+	font-weight: 300;
+	line-height: 1.5;
+	opacity: .7;
+}
+
+.timeline {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+	.timeline-body {
+		position: relative;
+		background-color: #2F3331;
+		margin-left: 100px;
+		border-radius: 0 8px 8px 0;
+		padding: 5px 0;
+  }
+
+		.timeline-body:after {
+			content: '';
+			width: 4px;
+			height: 100%;
+			background-color: #e8491d;
+			position: absolute;
+			left: -4px;
+			top: 0;
+		}
+
+		.timeline-item {
+			position: relative;
+    }
+
+			.timeline-item:after {
+				content: '';
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				border: 4px solid #32CD32;
+				background-color: #2F3331;
+				position: absolute;
+				left: -16px;
+				top: 0px;
+				z-index: 9;
+			}
+
+			.time {
+				position: absolute;
+				left: -85px;
+				top: 4px;
+				opacity: .5;
+				font-size: 13px;
+			}
+
+			.content {
+				margin: 40px;
+				padding-bottom: 40px;
+				border-bottom: 1px dashed #555;
+
+				.title {
+					font-weight: 500;
+					margin-bottom: 15px;
+				}
+			}
+		}
+	}
+}
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div id="branding">
+          <h1 href="/user_home"><span class="highlight">Event</span> Booking System</h1>
+        </div>
+        <nav>
+          <ul>
+            <li ><a href="{{ url_for('building') }}">Book Room</a></li>
+            <li><a href="{{ url_for('perm') }}">Night Perm</a></li>
+            <li><a href="{{ url_for('requestt') }}">Special requests</a></li>
+            <li class="current"><a href="{{ url_for('status') }}">Status</a></li>
+            <li><a href="{{ url_for('login') }}">Logout</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="timeline">
+	<div class="timeline-body">
+		<div class="timeline-item">
+			<p class="time">Sep 12</p>
+			<div class="content">
+				<h2 class="title">Associate Director</h2>
+				<p>The following request for the room has been approved by the Associate Director.</p>
+			</div>
+		</div>
+		<div class="timeline-item">
+			<p class="time">Sep 11</p>
+			<div class="content">
+				<h2 class="title">Chief Security</h2>
+				<p>The following request for the room has been approved by the Cheif Security Officer.</p>
+			</div>
+		</div>
+		<div class="timeline-item">
+			<p class="time">Sep 10</p>
+			<div class="content">
+				<h2 class="title">Student Council</h2>
+				<p>The following request for the room has been approved by the Student Council.</p>
+			</div>
+		</div>
+		<div class="timeline-item">
+			<p class="time">Sep 9</p>
+			<div class="content">
+				<h2 class="title">Faculty Advisor</h2>
+				<p>The following request for the room has been approved by the faculty advisor.</p>
+			</div>
+		</div>
+    <div class="timeline-item">
+			<p class="time">Sep 5</p>
+			<div class="content">
+				<h2 class="title">Room Booked</h2>
+				<p>AB-5 303 has been requested to be booked for your club. Waiting for approval</p>
+			</div>
+		</div>
+	</div>
+</div>
+  </body>
+</html>
