@@ -23,7 +23,7 @@
 	left: 50%;
 	transform: translate(-50%,-50%);
 	width: 350px;
-	height: 450px;
+	height: 530px;
 	padding: 80px 40px;
 	box-sizing: border-box;
 	background: rgba(0,0,0,.5);
@@ -44,6 +44,11 @@ h2
 	padding: 0 0 20px;
 	color: #efed40;
 	text-align: center;
+}
+.message{
+  background:#35424a;
+  color:#ffffff;
+  min-height:10px;
 }
 .loginBox p
 {
@@ -118,13 +123,17 @@ h2
 			{% with messages = get_flashed_messages()%}
 				{%if messages%}
 					{% for message in messages%}
-						<h2>{{message}}</h2>
+					<div class="message">
+					{{message}}
+					</div>
 					{% endfor %}
 				{% endif %}
 			{% endwith %}
-			<form action="/index" method="post">
+			<form action="/something" method="post">
 				<p>Email</p>
 				<input type="text" name="email" placeholder="Enter Email">
+				<p>UserID</p>
+				<input type="text" name="username" placeholder="Username">
 				<p>Password</p>
 				<input type="password" name="password" placeholder="••••••">
         <p>Re-Enter Password</p>

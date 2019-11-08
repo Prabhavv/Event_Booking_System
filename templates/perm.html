@@ -80,7 +80,7 @@ header {
 				<img src="./static/cloudy-night.png" alt="IMG">
 			</div>
 
-			<form class="contact1-form validate-form">
+			<form action="/permi" method="post" class="contact1-form validate-form">
 				<span class="contact1-form-title">
 					Night Perm.
 				</span>
@@ -101,7 +101,15 @@ header {
 				</div>
 
 				<div class="wrap-input1 validate-input" data-validate = "Student information is required">
-					<textarea class="input1" name="message" placeholder="Mention Student-CGPA"></textarea>
+					<textarea class="input1" name="message" placeholder="Mention Student-Reg number,CGPA"></textarea>
+					<span class="shadow-input1"></span>
+				</div>
+				<div class="wrap-input1 validate-input" data-validate = "Start Date is required">
+					<input class="input1" type="text" name="Date" placeholder="Mention Start Date(yyyy-mm-dd)">
+					<span class="shadow-input1"></span>
+				</div>
+				<div class="wrap-input1 validate-input" data-validate = "End Date is required">
+					<input class="input1" type="text" name="Date1" placeholder="Mention End Date(yyyy-mm-dd)">
 					<span class="shadow-input1"></span>
 				</div>
 

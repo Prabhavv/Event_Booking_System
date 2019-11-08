@@ -1,4 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Event Booking System</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<link rel="stylesheet" type="text/css" href="./static/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 
+	<link rel="stylesheet" type="text/css" href="./static/vendor/animate/animate.css">
+<link rel="stylesheet" type="text/css" href="./static/vendor/css-hamburgers/hamburgers.min.css">
+<link rel="stylesheet" type="text/css" href="./static/vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="./static/css/util.css">
+	<!-- <link rel="stylesheet" type="text/css" href="./static/css/main1.css"> -->
+	<link rel="stylesheet" href="./static/css/style.css">
+<style>
 
 
 
@@ -144,7 +160,7 @@ iframe {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .container-contact1 {
@@ -433,3 +449,158 @@ textarea.input1 + .shadow-input1 {
     opacity: 1;
   }
 }
+
+#showcase{
+	min-height:250px;
+	background:url('/static/showcase.jpg') no-repeat 0 -400px;
+	text-align:center;
+	color:#ffffff;
+}
+#showcase h1{
+	margin-top: 25px;
+	margin-bottom: 10px;
+	font-size:55px;
+	margin-bottom:10px;
+}
+
+.but{
+  text-decoration: none;
+  border: 1px solid #fff;
+  color: #fff !important;
+}
+footer{
+	padding-top: 2px;
+	color:#ffffff;
+	background-color:#e8491d;
+	text-align: center;
+	max-height: 23px;
+}
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+header nav {
+    float: right;
+    margin-top: 10px;
+}
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #e8491d 3px solid;
+}
+.first{
+  color: #ffffff;
+  padding-top: 30px;
+  min-height: 70px;
+  border-bottom: #e8491d 3px solid;
+
+}
+.rest{
+  color: #ffffff;
+  padding-top: 30px;
+  min-height: 70px;
+  border-bottom:  3px solid;
+
+}
+</style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div id="branding">
+        <h1 href="/user_home"><span class="highlight">Event</span> Booking System</h1>
+      </div>
+			<nav>
+				<ul>
+					<li><a href="{{ url_for('login') }}">Logout</a></li>
+				</ul>
+			</nav>
+
+    </div>
+  </header>
+
+  <div class="contact1">
+    <div class="container-contact1">
+      <div class="contact1-pic js-tilt" data-tilt>
+        <table border= 1 width=400>
+          <tr class="first">
+            <td>Spl_ID</td>
+            <td>Name</td>
+            <td>Comments</td>
+          </tr>
+            {%for book in booking%}
+            <tr class="rest">
+              <td>{{book[0]}}</td>
+              <td>{{book[1]}}</td>
+              <td>{{book[2]}}</td>
+            </tr>
+            {% endfor %}
+          </tr>
+        </table>
+      </div>
+
+      <form action="/specs" method="post" class="contact1-form validate-form">
+        <span class="contact1-form-title">
+           Approve Special Requests
+        </span>
+
+        <div class="wrap-input1 validate-input" >
+          <input class="input1" type="text" name="spl_id" placeholder="Spl_id">
+          <span class="shadow-input1"></span>
+        </div>
+
+        <div class="wrap-input1 validate-input">
+          <input class="input1" type="text" name="Secret Key" placeholder="Enter Secret key">
+          <span class="shadow-input1"></span>
+        </div>
+
+
+        <div class="container-contact1-form-btn">
+          <button class="contact1-form-btn">
+            <span>
+							Next
+							<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+						</span>
+          </button>
+          </form>
+
+    </div>
+  </div>
+
+
+
+
+  <script src="./static/vendor/jquery/jquery-3.2.1.min.js"></script>
+  <script src="./static/vendor/bootstrap/js/popper.js"></script>
+  <script src="./static/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+  <script src="./static/vendor/select2/select2.min.js"></script>
+  <script src="./static/vendor/tilt/tilt.jquery.min.js"></script>
+  <script >
+    $('.js-tilt').tilt({
+      scale: 1.1
+    })
+  </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+<!--===============================================================================================-->
+  <script src="./static/js/main.js"></script>
+
+</body>
+</html>

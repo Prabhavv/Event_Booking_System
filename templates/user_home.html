@@ -33,6 +33,35 @@
     .greeting{
       display: inline-flex;
     }
+    input[type="text"]{
+      border: none;
+    	border-bottom: 1px solid #fff;
+    	background: transparent;
+    	outline: none;
+    	height: 40px;
+    	color: #fff;
+    	font-size: 16px;
+    }
+    input[type="submit"]
+    {
+    	border: none;
+    	outline: none;
+    	height: 40px;
+    	color: #ffff;
+    	font-size: 16px;
+    	background: #F45B69;
+    	cursor: pointer;
+    	border-radius: 20px;
+    }
+    input[type="submit"]:hover
+    {
+    	background: #E4FDE1;
+    	color: #262626;
+    }
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #ffff;
+  opacity: 1; /* Firefox */
+}
     </style>
   </head>
   <body>
@@ -45,7 +74,7 @@
           <ul>
             <li><a href="{{ url_for('building') }}">Book Room</a></li>
             <li><a href="{{ url_for('perm') }}">Night Perm</a></li>
-            <li><a href="{{ url_for('requestt') }}">Special requests</a></li>
+            <li><a href="{{ url_for('requestt') }}">Logistics</a></li>
             <li><a href="{{ url_for('status') }}">Status</a></li>
             <li><a href="{{ url_for('login') }}">Logout</a></li>
           </ul>
@@ -58,11 +87,15 @@
         {% with messages = get_flashed_messages()%}
           {%if messages%}
             {% for message in messages%}
-            <div class="greeting"><h1>Welcome &nbsp</h1><h1>{{message}}</h1></div>
+            <div class="greeting"><h1>Welcome,&nbsp</h1><h1>{{message}}</h1></div>
             <p>Get started with your first booking.</p>
             {% endfor %}
           {% endif %}
         {% endwith %}
+        <form action="/anything" method="post">
+          <input type="text" name="name" placeholder="Event Name">
+          <input type="submit" name="" value="Submit">
+        </form>
       </div>
     </section>
 
